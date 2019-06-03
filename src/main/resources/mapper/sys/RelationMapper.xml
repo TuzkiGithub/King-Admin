@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kevinwong.module.sys.mapper.RelationMapper">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.kevinwong.module.sys.entity.RelationEntity" id="relationMap">
+        <result property="relationId" column="RELATION_ID"/>
+        <result property="menuId" column="MENU_ID"/>
+        <result property="roleId" column="ROLE_ID"/>
+    </resultMap>
+
+
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kevinwong.module.sys.mapper.OperationLogMapper">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.kevinwong.module.sys.entity.OperationLogEntity" id="operationLogMap">
+        <result property="operationLogId" column="OPERATION_LOG_ID"/>
+        <result property="logType" column="LOG_TYPE"/>
+        <result property="logName" column="LOG_NAME"/>
+        <result property="userId" column="USER_ID"/>
+        <result property="className" column="CLASS_NAME"/>
+        <result property="method" column="METHOD"/>
+        <result property="createTime" column="CREATE_TIME"/>
+        <result property="succeed" column="SUCCEED"/>
+        <result property="message" column="MESSAGE"/>
+    </resultMap>
+
+
+</mapper>

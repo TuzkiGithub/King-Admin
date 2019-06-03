@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kevinwong.module.sys.mapper.UserTokenMapper">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.kevinwong.module.sys.entity.UserTokenEntity" id="userTokenMap">
+        <result property="userId" column="USER_ID"/>
+        <result property="token" column="TOKEN"/>
+        <result property="expireTime" column="EXPIRE_TIME"/>
+        <result property="updateTime" column="UPDATE_TIME"/>
+    </resultMap>
+    
+    <select id="queryByToken" resultType="com.kevinwong.module.sys.entity.UserTokenEntity">
+        select * from sys_user_token where token = #{value}
+    </select>
+
+
+</mapper>

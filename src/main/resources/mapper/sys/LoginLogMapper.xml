@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kevinwong.module.sys.mapper.LoginLogMapper">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.kevinwong.module.sys.entity.LoginLogEntity" id="loginLogMap">
+        <result property="loginLogId" column="LOGIN_LOG_ID"/>
+        <result property="logName" column="LOG_NAME"/>
+        <result property="userId" column="USER_ID"/>
+        <result property="createTime" column="CREATE_TIME"/>
+        <result property="succeed" column="SUCCEED"/>
+        <result property="message" column="MESSAGE"/>
+        <result property="ipAddress" column="IP_ADDRESS"/>
+    </resultMap>
+
+
+</mapper>

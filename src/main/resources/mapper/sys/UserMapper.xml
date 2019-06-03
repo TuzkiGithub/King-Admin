@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kevinwong.module.sys.mapper.UserMapper">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.kevinwong.module.sys.entity.UserEntity" id="userMap">
+        <result property="userId" column="USER_ID"/>
+        <result property="avatar" column="AVATAR"/>
+        <result property="account" column="ACCOUNT"/>
+        <result property="password" column="PASSWORD"/>
+        <result property="salt" column="SALT"/>
+        <result property="name" column="NAME"/>
+        <result property="birthday" column="BIRTHDAY"/>
+        <result property="sex" column="SEX"/>
+        <result property="email" column="EMAIL"/>
+        <result property="phone" column="PHONE"/>
+        <result property="roleId" column="ROLE_ID"/>
+        <result property="deptId" column="DEPT_ID"/>
+        <result property="status" column="STATUS"/>
+        <result property="createTime" column="CREATE_TIME"/>
+        <result property="createUser" column="CREATE_USER"/>
+        <result property="updateTime" column="UPDATE_TIME"/>
+        <result property="updateUser" column="UPDATE_USER"/>
+        <result property="version" column="VERSION"/>
+    </resultMap>
+
+    <select id="queryByUserName" resultType="com.kevinwong.module.sys.entity.UserEntity">
+        select * from sys_user where account = #{username}
+    </select>
+
+</mapper>

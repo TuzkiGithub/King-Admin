@@ -26,5 +26,12 @@
         <result property="updateUser" column="UPDATE_USER"/>
     </resultMap>
 
+    <select id="queryListByParentId" resultMap="com.kevinwong.module.sys.entity.MenuEntity">
+        select * from sys_menu where pcode = #{parentId} order by sort asc
+    </select>
+
+    <select id="queryNotButtonList" resultMap="com.kevinwong.module.sys.entity.MenuEntity">
+        select * from sys_menu where type != 2 order by sort asc
+    </select>
 
 </mapper>

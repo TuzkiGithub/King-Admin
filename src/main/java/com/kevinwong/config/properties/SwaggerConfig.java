@@ -1,6 +1,7 @@
 package com.kevinwong.config.properties;
 
 import io.swagger.annotations.ApiOperation;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -26,6 +27,7 @@ import static com.google.common.collect.Lists.newArrayList;
  **/
 @Configuration
 @EnableSwagger2
+@ConditionalOnProperty(prefix = "king", name = "swagger-open", havingValue = "true")
 public class SwaggerConfig implements WebMvcConfigurer {
 
     @Bean

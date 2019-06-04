@@ -28,6 +28,10 @@ public class Constant {
      *  升序
      */
     public static final String ASC = "asc";
+    /**
+     * 验证码SessionKey
+     */
+    public static final String KING_KPATCHA_SESSION_KEY = "";
 
     /**
      * 菜单类型

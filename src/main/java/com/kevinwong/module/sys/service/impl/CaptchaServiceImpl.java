@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.google.code.kaptcha.Producer;
 import com.kevinwong.core.utils.DateUtils;
 import com.kevinwong.core.utils.KingException;
+import com.kevinwong.module.sys.entity.CaptchaEntity;
+import com.kevinwong.module.sys.mapper.CaptchaMapper;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,8 +13,6 @@ import java.awt.image.BufferedImage;
 import java.util.Date;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.kevinwong.module.sys.mapper.CaptchaMapper;
-import com.kevinwong.module.sys.entity.CaptchaEntity;
 import com.kevinwong.module.sys.service.CaptchaService;
 
 @Service("captchaService")

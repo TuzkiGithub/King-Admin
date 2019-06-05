@@ -7,10 +7,10 @@ import com.kevinwong.module.sys.entity.RoleEntity;
 import java.util.Map;
 
 /**
- * 角色表
+ * 角色
  *
  * @author Eastascend <EastascendWang@gmail.com>
- * @date 2019-04-28 17:15:07
+ * @date 2019-06-05 10:09:11
  */
 public interface RoleService extends IService<RoleEntity> {
 

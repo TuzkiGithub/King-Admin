@@ -1,6 +1,8 @@
 package com.kevinwong.module.sys.service.impl;
 
 import com.kevinwong.core.utils.K;
+import com.kevinwong.module.sys.entity.UserTokenEntity;
+import com.kevinwong.module.sys.mapper.UserTokenMapper;
 import com.kevinwong.module.sys.oauth2.TokenGenerator;
 import org.springframework.stereotype.Service;
 import java.util.Map;
@@ -10,8 +12,6 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.kevinwong.core.utils.PageUtils;
 import com.kevinwong.core.utils.Query;
 
-import com.kevinwong.module.sys.mapper.UserTokenMapper;
-import com.kevinwong.module.sys.entity.UserTokenEntity;
 import com.kevinwong.module.sys.service.UserTokenService;
 
 

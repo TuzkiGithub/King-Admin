@@ -1,11 +1,9 @@
 package com.kevinwong.module.sys.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.kevinwong.core.utils.PageUtils;
 import com.kevinwong.module.sys.entity.CaptchaEntity;
 
 import java.awt.image.BufferedImage;
-import java.util.Map;
 
 /**
  * 系统验证码

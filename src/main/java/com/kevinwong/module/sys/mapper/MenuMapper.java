@@ -1,30 +1,21 @@
 package com.kevinwong.module.sys.mapper;
 
-import com.kevinwong.module.sys.entity.MenuEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.kevinwong.module.sys.entity.MenuEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 /**
- * 菜单表
+ * 菜单管理
  * 
  * @author Eastascend <EastascendWang@gmail.com>
- * @date 2019-04-28 17:15:07
+ * @date 2019-06-05 10:09:10
  */
 @Mapper
 public interface MenuMapper extends BaseMapper<MenuEntity> {
 
-    /**
-     * 根据父菜单，查询子菜单
-     * @param parentId
-     * @return
-     */
-    List<MenuEntity> queryListByParentId(Long parentId);
-
-    /**
-     * 获取不包含按钮的菜单列表
-     * @return
-     */
     List<MenuEntity> queryNotButtonList();
+
+    List<MenuEntity> queryListByParentId(Long parentId);
 }

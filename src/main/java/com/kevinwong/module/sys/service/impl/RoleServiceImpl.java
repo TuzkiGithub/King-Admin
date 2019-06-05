@@ -1,5 +1,8 @@
 package com.kevinwong.module.sys.service.impl;
 
+import com.kevinwong.module.sys.entity.RoleEntity;
+import com.kevinwong.module.sys.mapper.RoleMapper;
+import com.kevinwong.module.sys.service.RoleService;
 import org.springframework.stereotype.Service;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -7,10 +10,6 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.kevinwong.core.utils.PageUtils;
 import com.kevinwong.core.utils.Query;
-
-import com.kevinwong.module.sys.mapper.RoleMapper;
-import com.kevinwong.module.sys.entity.RoleEntity;
-import com.kevinwong.module.sys.service.RoleService;
 
 
 @Service("roleService")

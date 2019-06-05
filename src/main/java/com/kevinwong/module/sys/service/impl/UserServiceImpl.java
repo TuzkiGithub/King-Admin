@@ -1,5 +1,7 @@
 package com.kevinwong.module.sys.service.impl;
 
+import com.kevinwong.module.sys.entity.UserEntity;
+import com.kevinwong.module.sys.mapper.UserMapper;
 import org.springframework.stereotype.Service;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -8,8 +10,6 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.kevinwong.core.utils.PageUtils;
 import com.kevinwong.core.utils.Query;
 
-import com.kevinwong.module.sys.mapper.UserMapper;
-import com.kevinwong.module.sys.entity.UserEntity;
 import com.kevinwong.module.sys.service.UserService;
 
 

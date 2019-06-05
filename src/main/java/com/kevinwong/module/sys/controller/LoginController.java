@@ -84,9 +84,9 @@ public class LoginController {
     public Map<String, Object> login(@RequestBody SysLoginForm form){
 
         boolean captcha = captchaService.validate(form.getUuid(), form.getCaptcha());
-        if (!captcha){
-            return K.error("验证码不正确！");
-        }
+//        if (!captcha){
+//            return K.error("验证码不正确！");
+//        }
 
         UserEntity user = userService.queryByUserName(form.getUsername());
         if (user == null || !user.getPassword().equals(new Sha256Hash(form.getPassword(), user.getSalt()).toHex())){

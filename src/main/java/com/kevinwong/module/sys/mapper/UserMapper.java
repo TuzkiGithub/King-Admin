@@ -18,4 +18,6 @@ public interface UserMapper extends BaseMapper<UserEntity> {
     List<String> queryAllPerms(long userId);
 
     UserEntity queryByUserName(String username);
+
+    List<Long> queryAllMenuId(Long userId);
 }

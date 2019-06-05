@@ -3,6 +3,8 @@ package com.kevinwong.module.sys.service.impl;
 import com.kevinwong.module.sys.entity.UserEntity;
 import com.kevinwong.module.sys.mapper.UserMapper;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -29,6 +31,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
     @Override
     public UserEntity queryByUserName(String username) {
         return baseMapper.queryByUserName(username);
+    }
+
+    @Override
+    public List<Long> queryAllMenuId(Long userId) {
+        return baseMapper.queryAllMenuId(userId);
     }
 
 }

@@ -47,8 +47,8 @@ public interface MenuService extends IService<MenuEntity> {
 
     /**
      * 删除
-     * @param mwnuId
+     * @param menuId
      */
-    void delete(Long mwnuId);
+    void delete(Long menuId);
 }
 

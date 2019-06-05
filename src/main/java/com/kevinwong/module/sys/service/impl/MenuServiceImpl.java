@@ -1,8 +1,10 @@
 package com.kevinwong.module.sys.service.impl;
 
 import com.kevinwong.core.utils.Constant;
+import com.kevinwong.core.utils.MapUtils;
 import com.kevinwong.module.sys.entity.MenuEntity;
 import com.kevinwong.module.sys.mapper.MenuMapper;
+import com.kevinwong.module.sys.service.RoleMenuService;
 import com.kevinwong.module.sys.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,8 +20,6 @@ import com.kevinwong.core.utils.Query;
 
 import com.kevinwong.module.sys.service.MenuService;
 
-import javax.management.relation.RelationService;
-
 
 @Service("menuService")
 public class MenuServiceImpl extends ServiceImpl<MenuMapper, MenuEntity> implements MenuService {
@@ -28,7 +28,7 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, MenuEntity> impleme
     private UserService userService;
 
     @Autowired
-    private RelationService relationService;
+    private RoleMenuService roleMenuService;
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
@@ -68,15 +68,23 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, MenuEntity> impleme
 
     @Override
     public List<MenuEntity> getUserMenuList(Long userId) {
+        //系统管理员 拥有最高权限
         if (userId == Constant.SUPER_ADMIN) {
             return getAllMenuList(null);
         }
-        return null;
+
+        //用户菜单列表
+        List<Long> menuIdList = userService.queryAllMenuId(userId);
+
+        return getAllMenuList(menuIdList);
     }
 
     @Override
-    public void delete(Long mwnuId) {
-
+    public void delete(Long menuId) {
+        //删除菜单
+        this.removeById(menuId);
+        //删除菜单与角色关联
+        roleMenuService.removeByMap(new MapUtils().put("menu_id", menuId));
     }
 
     /**
@@ -104,10 +112,10 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, MenuEntity> impleme
         List<MenuEntity> subMenuList = new ArrayList<MenuEntity>();
 
         for (MenuEntity entity : menuList) {
-            if (entity.getType() == null){
-
+            if (entity.getType() == Constant.MenuType.CATALOG.getValue()){
+                entity.setList(getMenuTreeList(queryListByParentId(entity.getParentId(), menuIdList), menuIdList));
             }
-
+            subMenuList.add(entity);
         }
 
         return subMenuList;

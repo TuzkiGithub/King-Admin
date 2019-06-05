@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.kevinwong.core.utils.PageUtils;
 import com.kevinwong.module.sys.entity.UserEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,5 +19,6 @@ public interface UserService extends IService<UserEntity> {
 
     UserEntity queryByUserName(String username);
 
+    List<Long> queryAllMenuId(Long userId);
 }
 

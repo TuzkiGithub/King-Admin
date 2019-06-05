@@ -30,8 +30,6 @@ import org.springframework.cache.annotation.EnableCaching;
  * @Date: 2019-04-25 17:16
  **/
 @SpringBootApplication
-@MapperScan("com.kevinwong.module.sys.mapper")
-@EnableCaching
 public class KingAdminApplication {
     public static void main(String[] args){
         SpringApplication.run(KingAdminApplication.class,args);

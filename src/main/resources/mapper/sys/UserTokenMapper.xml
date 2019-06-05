@@ -11,5 +11,8 @@
         <result property="updateTime" column="update_time"/>
     </resultMap>
 
+    <select id="queryByToken" resultType="com.kevinwong.module.sys.entity.UserTokenEntity">
+        select * from sys_user_token where token = #{value};
+    </select>
 
 </mapper>

@@ -16,5 +16,24 @@
         <result property="createTime" column="create_time"/>
     </resultMap>
 
+    <!--查询用户所有权限 -->
+    <select id="queryAllPerms" resultType="string">
+        select m.perms from sys_user_role ur
+            left join sys_role_menu rm on ur.role_id
+            left join sys_menu m on rm.menu_id = m.menu_id
+        where ur.user_id = #{userId};
+    </select>
+
+    <!--查询用户所有菜单 -->
+    <select id="queryAllMenuId" resultType="long">
+        select distinct rm.menu_id from sys_user_role ur
+            left join sys_role_menu rm on ur.role_id = rm.role_id
+        where ur.user_id = #{userId};
+    </select>
+
+    <!--通过用户名查询 -->
+    <select id="queryByUserName" resultType="com.kevinwong.module.sys.entity.MenuEntity">
+        select * from sys_user where username = #{username};
+    </select>
 
 </mapper>

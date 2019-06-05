@@ -3,14 +3,6 @@
 
 <mapper namespace="com.kevinwong.module.sys.mapper.UserTokenMapper">
 
-	<!-- 可根据自己的需求，是否要使用 -->
-    <resultMap type="com.kevinwong.module.sys.entity.UserTokenEntity" id="userTokenMap">
-        <result property="userId" column="user_id"/>
-        <result property="token" column="token"/>
-        <result property="expireTime" column="expire_time"/>
-        <result property="updateTime" column="update_time"/>
-    </resultMap>
-
     <select id="queryByToken" resultType="com.kevinwong.module.sys.entity.UserTokenEntity">
         select * from sys_user_token where token = #{value};
     </select>

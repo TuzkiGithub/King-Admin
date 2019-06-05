@@ -19,7 +19,7 @@
     </select>
 
     <!--通过用户名查询 -->
-    <select id="queryByUserName" resultType="com.kevinwong.module.sys.entity.MenuEntity">
+    <select id="queryByUserName" resultType="com.kevinwong.module.sys.entity.UserEntity">
         select * from sys_user where username = #{username}
     </select>
 

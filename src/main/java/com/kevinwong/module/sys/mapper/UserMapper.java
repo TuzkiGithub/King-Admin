@@ -15,9 +15,24 @@ import java.util.List;
 @Mapper
 public interface UserMapper extends BaseMapper<UserEntity> {
 
+    /**
+     * 查询用户所有权限
+     * @param userId
+     * @return
+     */
     List<String> queryAllPerms(long userId);
 
+    /**
+     * 根据用户名，查询系统用户
+     * @param username
+     * @return
+     */
     UserEntity queryByUserName(String username);
 
+    /**
+     * 查询用户的所有菜单ID
+     * @param userId
+     * @return
+     */
     List<Long> queryAllMenuId(Long userId);
 }

@@ -1,5 +1,6 @@
 package com.kevinwong.module.sys.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
@@ -21,7 +22,7 @@ public class CaptchaEntity implements Serializable {
 	/**
 	 * uuid
 	 */
-	@TableId
+	@TableId(type = IdType.INPUT)
 	private String uuid;
 	/**
 	 * 验证码

@@ -9,6 +9,10 @@ public class Constant {
      */
 	public static final int SUPER_ADMIN = 1;
     /**
+     * Token 过期时间 18小时
+     */
+	public static final int KING_TOKEN_EXPIRE_TIME = 3600 * 18;
+    /**
      * 当前页码
      */
     public static final String PAGE = "page";

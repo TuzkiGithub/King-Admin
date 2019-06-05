@@ -16,12 +16,12 @@ import com.kevinwong.core.utils.Query;
 
 import com.kevinwong.module.sys.service.UserTokenService;
 
+import static com.kevinwong.core.utils.Constant.KING_TOKEN_EXPIRE_TIME;
+
 
 @Service("userTokenService")
 public class UserTokenServiceImpl extends ServiceImpl<UserTokenMapper, UserTokenEntity> implements UserTokenService {
 
-    //token 过期时间 18小时
-    public static final int KING_TOKEN_EXPIRE_TIME = 3600 * 18;
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
         IPage<UserTokenEntity> page = this.page(
@@ -37,7 +37,7 @@ public class UserTokenServiceImpl extends ServiceImpl<UserTokenMapper, UserToken
         String token = TokenGenerator.generateValue();
 
         Date now = new Date();
-        //过期时间
+
         Date expireTime = new Date(now.getTime() + KING_TOKEN_EXPIRE_TIME * 1000);
 
         UserTokenEntity userTokenEntity = this.getById(userId);

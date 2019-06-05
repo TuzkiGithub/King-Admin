@@ -1,5 +1,6 @@
 package com.kevinwong.module.sys.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
@@ -19,9 +20,9 @@ public class UserTokenEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * 
+	 * 用户ID
 	 */
-	@TableId
+	@TableId(type = IdType.INPUT)
 	private Long userId;
 	/**
 	 * token

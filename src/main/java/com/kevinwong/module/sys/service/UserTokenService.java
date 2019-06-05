@@ -17,8 +17,17 @@ public interface UserTokenService extends IService<UserTokenEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
 
+    /**
+     * 生成token
+     * @param userId
+     * @return
+     */
     K createToken(Long userId);
 
+    /**
+     * 退出
+     * @param userId
+     */
     void logout(Long userId);
 }
 

@@ -231,13 +231,6 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- tess4j OCR -->
-        <dependency>
-            <groupId>net.sourceforge.tess4j</groupId>
-            <artifactId>tess4j</artifactId>
-            <version>4.3.0</version>
-        </dependency>
-
         <!-- 多数据源事务管理-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

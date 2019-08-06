@@ -4,6 +4,8 @@ import com.kevinwong.module.sys.entity.RoleEntity;
 import com.kevinwong.module.sys.mapper.RoleMapper;
 import com.kevinwong.module.sys.service.RoleService;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -23,6 +25,11 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, RoleEntity> impleme
         );
 
         return new PageUtils(page);
+    }
+
+    @Override
+    public List<Long> queryMenuList(Long roleId) {
+        return null;
     }
 
 }
